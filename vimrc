@@ -1,59 +1,85 @@
-"
-" Use pathogen.vim to automatically load modules in the ~/.vim/bundle
-" directory:
-"
-" pathogen.vim : https://github.com/tpope/vim-pathogen
-"
+"-------------------------------------------------------------------------
+"-                                                                       -
+"- Use pathogen.vim to automatically load modules in the ~/.vim/bundle   -
+"- directory:                                                            -
+"-                                                                       -
+"- pathogen.vim : https://github.com/tpope/vim-pathogen                  -
+"-                                                                       -
+"-------------------------------------------------------------------------
 execute pathogen#runtime_append_all_bundles()
 execute pathogen#helptags()
-"
-" Enable VIm to load the indent file for the detected filetype:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Enable VIm to load the indent file for the detected filetype:          -
+"                                                                        -
+"-------------------------------------------------------------------------
 filetype indent on
-"
-" Enable VIm to load the plugin file (if there is one) for the detected
-" filetype:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Enable VIm to load the plugin file (if there is one) for the detected  -
+" filetype:                                                              -
+"                                                                        -
+"-------------------------------------------------------------------------
 filetype plugin on
-"
+
 if has ("autocmd")
   filetype plugin indent on
 endif
-"
-" Enable VIm syntax highlighting with VIm-defined default colors:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Enable VIm syntax highlighting with VIm-defined default colors:        -
+"                                                                        -
+"-------------------------------------------------------------------------
 syntax on
 syntax enable
-"
-set background=dark
-set guifont=Menlo\ Regular:h18
-"
-" General display settings:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" General display settings:                                              -
+"                                                                        -
+"-------------------------------------------------------------------------
 set number
 set list
-"
-" Always display the status line:
-"
+
+set background=dark
+set guifont=Menlo\ Regular:h18
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Always display the status line:                                        -
+"                                                                        -
+"-------------------------------------------------------------------------
 set laststatus=2
-"
-" Allow VIm to hide modified buffers instead of forcing them to close:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Allow VIm to hide modified buffers instead of forcing them to close:   -
+"                                                                        -
+"-------------------------------------------------------------------------
 set hidden
 set history=500
 set nowrap
-"
-" File backup settings:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" File backup settings:                                                  -
+"                                                                        -
+"-------------------------------------------------------------------------
 set backup
 set backupdir=~/.vim/backups
 set writebackup
 set backupcopy=yes
 set directory=.,~/.vim/backups,/tmp
 au BufWritePre * let &bex = '@' . strftime("%F.%H:%M")
-"
-" Tab settings:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Tab settings:                                                          -
+"                                                                        -
+"-------------------------------------------------------------------------
 set tabstop=3
 set expandtab
 set softtabstop=3
@@ -61,48 +87,78 @@ set shiftwidth=3
 set backspace=2
 set autoindent
 set smartindent
-"
-" Character encoding:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Character encoding:                                                    -
+"                                                                        -
+"-------------------------------------------------------------------------
 set encoding=utf-8
-"
-" Tabbed command completion
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Tabbed command completion                                              -
+"                                                                        -
+"-------------------------------------------------------------------------
 set wildmenu
-"
-" Search settings:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Search settings:                                                       -
+"                                                                        -
+"-------------------------------------------------------------------------
 set ignorecase
 set hlsearch
 set showmatch
-"
-" Control where new windows are opened relative to the current one:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Control where new windows are opened relative to the current one:      -
+"                                                                        -
+"-------------------------------------------------------------------------
 set splitbelow
 set splitright
-"
-" Configure VIm to wait 200ms for multiple-key commands to distinguish:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Configure VIm to wait 200ms for multiple-key commands to distinguish:  -
+"                                                                        -
+"-------------------------------------------------------------------------
 set timeout ttimeout timeoutlen=200
-"
-" Configure VIm to keep the cursor in the window when it gets to a certain
-" number of lines of the window top/bottom:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Configure VIm to keep the cursor in the window when it gets to a       -
+" certain number of lines of the window top/bottom:                      -
+"                                                                        -
+"-------------------------------------------------------------------------
 set scrolloff=5
-"
-" Configure VIm to write all files if the focus is lost on the VIm window:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Configure VIm to automatically write all files if the focus is lost    -
+" on the VIm window:                                                     -
+"                                                                        -
+"-------------------------------------------------------------------------
 set autowriteall
-"
-" Configure VIm not to have audio error indications but have visual error
-" indications *without* the window flash (t_vb=):
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Configure VIm not to have audio error indications but have visual      -
+" error indications *without* the window flash (t_vb=):                  -
+"                                                                        -
+"-------------------------------------------------------------------------
 set noerrorbells visualbell t_vb=
-"
-" Configure VIm to display the full path to the file being edited and the type
-" of the file as determined by VIm:
-"
+
+"-------------------------------------------------------------------------
+"                                                                        -
+" Configure VIm to display the full path to the file being edited and    -
+" the type of the file as determined by VIm:                             -
+"                                                                        -
+"-------------------------------------------------------------------------
 set statusline=%F\ -\ FileType:\ %y
+
+"-------------------------------------------------------------------------
 "
 " Allow VIm to autoread files changed outside the editor:
 "
@@ -114,3 +170,4 @@ set statusline=%F\ -\ FileType:\ %y
 "
 " TBD
 "
+"-------------------------------------------------------------------------
