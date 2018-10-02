@@ -4,8 +4,8 @@
 "
 " pathogen.vim : https://github.com/tpope/vim-pathogen
 "
-execute pathogen#runtime_append_all_bundles()
-execute pathogen#helptags()
+all pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 "
 " Enable VIm to load the indent file for the detected filetype:
 "
